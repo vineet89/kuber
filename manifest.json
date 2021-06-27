@@ -1,0 +1,23 @@
+{
+  "name": "Kuber",
+  "description": "Buy growing companies at reasonable valuations",
+  "version": "0.1",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.screener.in/*"],
+      "js": [
+        "jquery.js",
+        "constants.js",
+        "templates.js",
+        "utils.js",
+        "addAverageSales.js"
+      ],
+      "css": ["styles.css"]
+    }
+  ]
+}

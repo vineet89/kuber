@@ -1,0 +1,40 @@
+#kuber-box {
+  border: 2px dotted rebeccapurple;
+  width: 100%;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+#kuber-box,
+#kuber-box .kuber-insights {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#kuber-box .kuber-insights p {
+  margin: 5px;
+}
+
+#kuber-box .kuber-insights p {
+  margin: 5px;
+}
+
+#kuber-box .kuber-branding {
+  align-self: flex-start;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+}
+
+#kuber-box .kuber-branding .logo {
+  color: rebeccapurple;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+#kuber-box .kuber-branding .personal {
+  font-size: 0.6em;
+  margin-left: 10px;
+}
