@@ -11,18 +11,22 @@ const reservesData = balalnceSheetTable.find(e => e.get(CONSANTS.METRIC_HEADER).
 
 // Calculate growth rate over last 5 years
 const sixYrSalesData = getLastNElementsFromMap(salesData, 6);
-const growthRate = getGrowthRate(sixYrSalesData);
-const averageGrowthRate = getAverage(growthRate);
+const { growthRate } = getGrowthRate(sixYrSalesData);
 
-kuberData.set(`Average growth in sales over last ${growthRate.length} years is `, `${averageGrowthRate}%`);
-
-// Get pos neg ratio
+// Get sales growth pattern
 const posNeg = getPositiveToNegatives(growthRate);
 kuberData.set("Sales growth pattern", getGrowthPattern(posNeg));
 
+// Add sales growth range
+kuberData.set("Sales growth range", `${Math.min(...growthRate)}%, ${Math.max(...growthRate)}%`);
+
+const averageGrowthRate = getAverage(growthRate);
+kuberData.set(`Average growth in sales over last ${growthRate.length} years is `, `${averageGrowthRate}%`);
+
+
 // Get EPS growth for last 5 years
 const sixYrEPSData = getLastNElementsFromMap(epsData, 6);
-const epsGrowthRate = getGrowthRate(sixYrEPSData);
+const { growthRate: epsGrowthRate } = getGrowthRate(sixYrEPSData);
 const epsCAGR = getCAGR(sixYrEPSData[0], sixYrEPSData[sixYrEPSData.length - 1], sixYrEPSData.length - 1);
 const epsGrowthAbsolutePerYear = ((sixYrEPSData[sixYrEPSData.length - 1] - sixYrEPSData[0]) / (sixYrEPSData.length - 1)).toFixed(2);
 

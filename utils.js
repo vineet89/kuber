@@ -2,16 +2,17 @@ const removeLeadingChars = (str) => str.replace(/^\D+/g, '');
 const removeCommaNumber = (str) => Number(str.replace(/,/g, ''));
 const getLastNElementsFromMap = (map, n = 5) => Array.from(map.values()).slice(-n).filter(e => typeof e === 'number');
 const getGrowthRate = (vals = []) => {
-    const gr = [];
+    const growthRate = [];
+
     vals.forEach((v, index) => {
         if (index > 0) {
             const absIncrease = (v - vals[index - 1]);
             const percentIncrease = (absIncrease / vals[index - 1]) * 100
             const fixedDecimals = percentIncrease.toFixed(2);
-            gr.push(Number(fixedDecimals));
+            growthRate.push(Number(fixedDecimals));
         }
     });
-    return gr;
+    return { growthRate, absolute: false };
 };
 
 const getCAGR = (initialValue, finalValue, timePeriods) => {
