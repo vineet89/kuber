@@ -1,16 +1,17 @@
 #kuber-box {
   border: 2px dotted rebeccapurple;
   width: 100%;
-  padding: 20px 0;
+  padding: 20px 10px;
   margin-top: 20px;
 }
 
 #kuber-box,
 #kuber-box .kuber-insights {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+  margin-top: 10px;
 }
 
 #kuber-box .kuber-insights p {
@@ -23,7 +24,6 @@
 
 #kuber-box .kuber-branding {
   align-self: flex-start;
-  padding: 0 10px;
   display: flex;
   align-items: center;
 }
