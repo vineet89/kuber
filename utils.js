@@ -48,7 +48,11 @@ const getPositiveToNegatives = (vals = []) => {
             negCount += 1;
         }
     });
-    return `${positive.toFixed(2)}(${posCount}) / ${negative.toFixed(2)} (${negCount})`
+    return { up: posCount, upMagnitude: positive, down: negCount, downMagnitude: negative }
+}
+
+const getGrowthPattern = (posNeg) => {
+    return `${posNeg.up} growths, ${posNeg.down} declines`
 }
 
 

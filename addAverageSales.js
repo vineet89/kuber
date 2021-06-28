@@ -18,7 +18,7 @@ kuberData.set(`Average growth in sales over last ${growthRate.length} years is `
 
 // Get pos neg ratio
 const posNeg = getPositiveToNegatives(growthRate);
-kuberData.set("PosNeg sales ratio is ", posNeg);
+kuberData.set("Sales growth pattern", getGrowthPattern(posNeg));
 
 // Get EPS growth for last 5 years
 const sixYrEPSData = getLastNElementsFromMap(epsData, 6);
@@ -34,7 +34,7 @@ else {
 
 // Get EPS variability
 const epsPosNeg = getPositiveToNegatives(epsGrowthRate);
-kuberData.set("PosNeg ratio for EPS = ", epsPosNeg);
+kuberData.set("EPS growth pattern", getGrowthPattern(epsPosNeg));
 
 // Get reserves to market cap ratio
 const reserves = getLastNElementsFromMap(reservesData, 1);
