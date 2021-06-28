@@ -14,7 +14,7 @@ const sixYrSalesData = getLastNElementsFromMap(salesData, 6);
 const growthRate = getGrowthRate(sixYrSalesData);
 const averageGrowthRate = getAverage(growthRate);
 
-kuberData.set(`Average growth in sales over last ${growthRate.length} years is `, averageGrowthRate);
+kuberData.set(`Average growth in sales over last ${growthRate.length} years is `, `${averageGrowthRate}%`);
 
 // Get pos neg ratio
 const posNeg = getPositiveToNegatives(growthRate);
