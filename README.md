@@ -1,7 +1,7 @@
-# kuber
+###### tags: `kuber`
 
-Chrome extension to add useful insights to Screener.
+# Kuber
 
-### Purpose
+Kuber is a chrome extension that helps investors pick stocks at reasonable valuations by understanding growth trajectory of a given company.
 
-When buying stocks, it's very helpful to evaluate the growth trajectory of the company and compare it to its current valuation.
+It adds useful insights to [screener.in](https://www.screener.in/) company pages by analyzing important metrics such as sales & profit growth, net worth, earnings per share for past 3 to 5 years.
