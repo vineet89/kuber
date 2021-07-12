@@ -15,7 +15,11 @@
         "constants.js",
         "templates.js",
         "utils.js",
-        "addAverageSales.js"
+        "sections/sales.js",
+        "sections/netprofit.js",
+        "sections/cashflow.js",
+        "sections/networth.js",
+        "main.js"
       ],
       "css": ["styles.css"]
     }

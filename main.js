@@ -1,27 +1,21 @@
 const kuberData = new Map();
+const insightsData = [];
 
 // Get data from profit loss table and balance sheet
 const profitLossTable = tableToObject('#profit-loss table.data-table');
-const balalnceSheetTable = tableToObject('#balance-sheet table.data-table');
+const balanceSheetTable = tableToObject('#balance-sheet table.data-table');
+const cashFlowTable = tableToObject('#cash-flow table.data-table');
 
 // Extract sales data
-const salesData = profitLossTable.find(e => e.get(CONSANTS.METRIC_HEADER).indexOf(CONSANTS.SALES) !== -1);
 const epsData = profitLossTable.find(e => e.get(CONSANTS.METRIC_HEADER).indexOf(CONSANTS.EPS) !== -1);
-const reservesData = balalnceSheetTable.find(e => e.get(CONSANTS.METRIC_HEADER).indexOf(CONSANTS.RESERVES) !== -1);
+const reservesData = balanceSheetTable.find(e => e.get(CONSANTS.METRIC_HEADER).indexOf(CONSANTS.RESERVES) !== -1);
 
-// Calculate growth rate over last 5 years
-const sixYrSalesData = getLastNElementsFromMap(salesData, 6);
-const { growthRate } = getGrowthRate(sixYrSalesData);
 
-// Get sales growth pattern
-const posNeg = getPositiveToNegatives(growthRate);
-kuberData.set("Sales growth pattern", getGrowthPattern(posNeg));
+insightsData.push(addSalesSection(profitLossTable, 6));
+insightsData.push(addNetProfitSection(profitLossTable, 6));
+insightsData.push(addNetWorthSection(balanceSheetTable, 6));
+insightsData.push(addCashFlowSection(cashFlowTable, 6));
 
-// Add sales growth range
-kuberData.set("Sales growth range", `${Math.min(...growthRate)}%, ${Math.max(...growthRate)}%`);
-
-const averageGrowthRate = getAverage(growthRate);
-kuberData.set(`Average growth in sales over last ${growthRate.length} years is `, `${averageGrowthRate}%`);
 
 
 // Get EPS growth for last 5 years
@@ -61,7 +55,5 @@ else {
 
 }
 
-
-
-$(CONSANTS.TARGET_CONTAINER).append(kuberUIBox(kuberData));
+$(CONSANTS.TARGET_CONTAINER).append(kuberUIBox(insightsData));
 

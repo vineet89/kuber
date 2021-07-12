@@ -5,6 +5,12 @@
   margin-top: 20px;
 }
 
+#kuber-box section .section-title {
+  font-size: 1.2em;
+  margin: 10px 0;
+  text-decoration: underline;
+}
+
 #kuber-box,
 #kuber-box .kuber-insights {
   display: flex;
@@ -31,5 +37,5 @@
 #kuber-box .kuber-branding .logo {
   color: rebeccapurple;
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.4em;
 }

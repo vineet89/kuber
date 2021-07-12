@@ -6,5 +6,6 @@ const CONSANTS = {
     MARKET_CAP: 'market cap',
     OTHER_INCOME: 'other income',
     NET_PROFIT: 'net profit',
-    TARGET_CONTAINER: '#profit-loss'
+    TARGET_CONTAINER: '#profit-loss',
+    CASH_OPERATING_ACTIVITY: 'cash from operating activity'
 };

@@ -53,7 +53,7 @@ const getPositiveToNegatives = (vals = []) => {
 }
 
 const getGrowthPattern = (posNeg) => {
-    return `${posNeg.up} growths, ${posNeg.down} declines`
+    return `${posNeg.up} advances, ${posNeg.down} declines`
 }
 
 
